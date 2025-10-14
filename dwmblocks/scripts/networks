@@ -1,9 +1,0 @@
-#!/bin/bash
-
-wifi=$(nmcli -t -f NAME connection show --active | head -n1)
-
-if [ -z "$wifi" ] || [ "$wifi" = "lo" ]; then
-	echo "No connection"
-else
-	echo "$wifi"
-fi
