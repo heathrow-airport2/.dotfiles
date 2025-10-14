@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+connection=$(nmcli -t -f NAME connection show --active | head -n1)
+if [ "$connection" != "lo" ]; then
+
+	weather=$(curl wttr.in/?format="%C:+%t")
+	echo "$weather "
+fi

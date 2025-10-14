@@ -1,0 +1,8 @@
+#!/bin/bash
+
+connection=$(nmcli -t -f NAME connection show --active | head -n1)
+
+if [ "$connection" != "lo" ]; then
+	cupd=$(checkupdates | wc -l)
+	echo "$cupd updates "
+fi
